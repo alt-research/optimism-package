@@ -86,4 +86,6 @@ def parse(
         "op.conductor.type": "op-conductor",
     }
 
+    plan.print("Adding {}".format(conductor_params))
+
     return struct(**conductor_params)
