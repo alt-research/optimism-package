@@ -52,6 +52,8 @@ def parse(
         _registry.OP_CONDUCTOR
     )
 
+    conductor_params["extra_conductor_service"] = conductor_params["extra_conductor_service"] or ""
+
     # Add the service name
     conductor_params["service_name"] = "op-conductor-{}-{}-{}".format(
         network_id, network_name, participant_name
@@ -85,7 +87,5 @@ def parse(
         "op.network.participant.name": participant_name,
         "op.conductor.type": "op-conductor",
     }
-
-    plan.print("Adding {}".format(conductor_params))
 
     return struct(**conductor_params)
