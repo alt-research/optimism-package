@@ -93,7 +93,7 @@ def launch(
         ".privateKey",
     )
 
-    plan.print("Skip _op_batcher_launcher: private key {}".format(batcher_private_key))
+    plan.print("Skip _launch_batcher: private key {}".format(batcher_private_key))
 
     # _launch_batcher(
     #    plan=plan,
@@ -111,18 +111,20 @@ def launch(
     #    log_prefix=network_log_prefix,
     #)
 
-    _launch_proposer(
-        plan=plan,
-        proposer_params=params.proposer_params,
-        network_params=network_params,
-        sequencers_params=sequencers_params,
-        deployment_output=deployment_output,
-        private_key=proposer_private_key,
-        l1_config_env_vars=l1_config_env_vars,
-        observability_helper=observability_helper,
-        signer_context=original_launcher_output__hack.signer,
-        log_prefix=network_log_prefix,
-    )
+    plan.print("Skip _launch_proposer: private key {}".format(proposer_private_key))
+
+    #_launch_proposer(
+    #    plan=plan,
+    #    proposer_params=params.proposer_params,
+    #    network_params=network_params,
+    #    sequencers_params=sequencers_params,
+    #    deployment_output=deployment_output,
+    #    private_key=proposer_private_key,
+    #    l1_config_env_vars=l1_config_env_vars,
+    #    observability_helper=observability_helper,
+    #    signer_context=original_launcher_output__hack.signer,
+    #    log_prefix=network_log_prefix,
+    #)
 
     _launch_proxyd_maybe(
         plan=plan,
