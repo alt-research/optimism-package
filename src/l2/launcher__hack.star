@@ -93,6 +93,8 @@ def launch(
         ".privateKey",
     )
 
+    plan.print("Skip _op_batcher_launcher: private key {}".format(batcher_private_key))
+
     # _launch_batcher(
     #    plan=plan,
     #    batcher_params=params.batcher_params,
