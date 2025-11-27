@@ -266,12 +266,7 @@ def get_service_config(
     if conductor_params:
         cmd += [
             "--conductor.enabled=true",
-            "--conductor.rpc={0}".format(
-                _net.service_url(
-                    conductor_params.service_name,
-                    conductor_params.ports[_net.RPC_PORT_NAME],
-                )
-            ),
+            "--conductor.rpc={0}".format(conductor_params["extra_conductor_service"]),
             "--sequencer.stopped=true",
         ]
 
@@ -289,6 +284,8 @@ def get_service_config(
         )
 
     cmd += params.extra_params
+
+    plan.print("op node cmd: {0}".format(cmd))
 
     config_args = {
         "image": params.image,

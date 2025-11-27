@@ -19,6 +19,7 @@ _DEFAULT_ARGS = {
     "raft_heartbeat_timeout": "900ms",
     "raft_lease_timeout": "550ms",
     "raft_trailing_logs": 3600,
+    "extra_conductor_service": "",
 }
 
 
