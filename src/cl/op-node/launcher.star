@@ -266,7 +266,7 @@ def get_service_config(
     if conductor_params:
         cmd += [
             "--conductor.enabled=true",
-            "--conductor.rpc={0}".format(conductor_params["extra_conductor_service"]),
+            "--conductor.rpc={0}".format(conductor_params.extra_conductor_service),
             "--sequencer.stopped=true",
         ]
 
