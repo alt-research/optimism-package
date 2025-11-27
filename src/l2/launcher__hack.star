@@ -93,21 +93,21 @@ def launch(
         ".privateKey",
     )
 
-    _launch_batcher(
-        plan=plan,
-        batcher_params=params.batcher_params,
-        network_params=network_params,
-        sequencers_params=sequencers_params,
-        private_key=batcher_private_key,
-        deployment_output=deployment_output,
-        l1_config_env_vars=l1_config_env_vars,
-        da_server_context=original_launcher_output__hack.da.context
-        if original_launcher_output__hack.da
-        else None,
-        signer_context=original_launcher_output__hack.signer,
-        observability_helper=observability_helper,
-        log_prefix=network_log_prefix,
-    )
+    # _launch_batcher(
+    #    plan=plan,
+    #    batcher_params=params.batcher_params,
+    #    network_params=network_params,
+    #    sequencers_params=sequencers_params,
+    #    private_key=batcher_private_key,
+    #    deployment_output=deployment_output,
+    #    l1_config_env_vars=l1_config_env_vars,
+    #    da_server_context=original_launcher_output__hack.da.context
+    #    if original_launcher_output__hack.da
+    #    else None,
+    #    signer_context=original_launcher_output__hack.signer,
+    #    observability_helper=observability_helper,
+    #    log_prefix=network_log_prefix,
+    #)
 
     _launch_proposer(
         plan=plan,
