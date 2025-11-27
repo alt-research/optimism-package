@@ -49,29 +49,30 @@ def launch(
             network_log_prefix, participant_name
         )
 
-        plan.print("{}: Launching".format(participant_log_prefix))
+        plan.print("{}: Skip Launching".format(participant_log_prefix))
 
-        _launch_conductor_maybe(
-            plan=plan,
-            participant_params=participant_params,
-            network_params=network_params,
-            sidecar_context=original_launcher_output__hack.participants[
-                index_hack
-            ].sidecar.context
-            if original_launcher_output__hack.participants[index_hack].sidecar
-            else None,
-            deployment_output=deployment_output,
-            el_builder_params=params.participants[index_hack].el_builder,
-            observability_helper=observability_helper,
-            log_prefix=participant_log_prefix,
-        )
+        # _launch_conductor_maybe(
+        #    plan=plan,
+        #    participant_params=participant_params,
+        #    network_params=network_params,
+        #    sidecar_context=original_launcher_output__hack.participants[
+        #        index_hack
+        #    ].sidecar.context
+        #    if original_launcher_output__hack.participants[index_hack].sidecar
+        #    else None,
+        #    deployment_output=deployment_output,
+        #    el_builder_params=params.participants[index_hack].el_builder,
+        #    observability_helper=observability_helper,
+        #    log_prefix=participant_log_prefix,
+        # )
 
     # We now bootstrap the conductor cluster
-    _op_conductor_ops_launcher.launch(
-        plan=plan,
-        l2_params=params,
-        registry=registry,
-    )
+    # _op_conductor_ops_launcher.launch(
+    #    plan=plan,
+    #    l2_params=params,
+    #    registry=registry,
+    # )
+    plan.print("Skip _op_conductor_ops_launcher")
 
     # We get a list of sequencers to be used with batcher & proposer
     sequencers_params = _selectors.get_sequencers_params(params.participants)
